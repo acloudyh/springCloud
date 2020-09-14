@@ -29,4 +29,4 @@ spring:
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   #所有entity别名类所在包
-  type-aliases-package: com.atguigu.springcloud.entities
+  type-aliases-package: com.george.springcloud.entities

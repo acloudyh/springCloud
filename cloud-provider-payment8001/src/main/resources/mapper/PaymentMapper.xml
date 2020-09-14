@@ -3,7 +3,7 @@
 
 
 <mapper namespace="com.george.springcloud.dao.PaymentDao">
-    <insert id="create" parameterType="com.george.springcloud.entities.Payment" useGeneratedKeys="true"
+    <insert id="create" parameterType="Payment" useGeneratedKeys="true"
             keyProperty="id">
         insert into payment(serial) values(#{serial});
     </insert>
