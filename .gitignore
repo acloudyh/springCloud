@@ -5,12 +5,12 @@
 ######################
 # Intellij
 ######################
-.idea/
 *.iml
 *.iws
 *.ipr
 *.ids
 *.orig
+.idea
 
 ######################
 # Package Files
