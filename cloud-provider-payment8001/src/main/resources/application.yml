@@ -5,20 +5,6 @@ spring:
   application:
     name: cloud-payment-service
   datasource:
-    druid:
-      # 默认 true 为 true 时 validationQuery 必须设为非空字符串
-      # 申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。
-      test-on-borrow: false
-      # 默认 false 为 true 时 validationQuery 必须设为非空字符串
-      # 【建议】配置为true，不影响性能，并且保证安全性。申请连接的时候检测，
-      # 如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。
-      test-while-idle: true
-      # 默认 true 为 true 时 validationQuery 必须设为非空字符串
-      # 归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。
-      test-on-return: false
-      # 用来检测连接是否有效的sql，要求是一个查询语句，常用select 'x'。如果validationQuery为null，
-      # testOnBorrow、testOnReturn、testWhileIdle都不会起作用。
-      validation-query: select 1
     #当前数据源操作类型
     type: com.alibaba.druid.pool.DruidDataSource
     #mysql驱动包
@@ -30,3 +16,12 @@ mybatis:
   mapperLocations: classpath:mapper/*.xml
   #所有entity别名类所在包
   type-aliases-package: com.george.springcloud.entities
+
+eureka:
+  client:
+    #是否将自己注册到注册中心, 默认true
+    register-with-eureka: true
+    #是否从EurekaServer抓取已有的注册信息,单机无所谓,集群必须设置为true配合ribbon使用负载均衡
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka #,http://eureka7002.com:7002/eureka
