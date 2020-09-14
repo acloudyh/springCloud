@@ -1,3 +1,32 @@
 # Project exclude paths
 /cloud-consumer-order80/target/
 /cloud-provider-payment8001/target/
+
+######################
+# Intellij
+######################
+.idea/
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
+
+######################
+# Package Files
+######################
+*.jar
+*.war
+*.ear
+*.db
+
+######################
+# Maven
+######################
+/log/
+target/
+
+######################
+# Logs
+######################
+*.log
