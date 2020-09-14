@@ -1,0 +1,3 @@
+# Project exclude paths
+/cloud-consumer-order80/target/
+/cloud-provider-payment8001/target/
