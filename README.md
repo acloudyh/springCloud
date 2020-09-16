@@ -1,5 +1,8 @@
 ### 尚硅谷 springCloud 学习
 
+脑图链接:
+链接: https://pan.baidu.com/s/1NqN2yP0FfsrozJ6bIANTNQ 提取码: k7v9
+
  ![Alt text](image/cloud组件图.png)
 
 ### consul
@@ -40,3 +43,16 @@
 
 ### OpenFeign    
     Feign是一个声明式的web服务客户端，让编写web服务客户端变得非常容易，只需创建一个接口并在接口上添加注解即可
+```java
+
+//启用feign客户端
+@EnableFeignClients
+
+//定义feign客户端
+@FeignClient(value = "CLOUD-PAYMENT-SERVICE")
+```
+
+
+
+### 服务降级      
+1. *Hystrix* 
