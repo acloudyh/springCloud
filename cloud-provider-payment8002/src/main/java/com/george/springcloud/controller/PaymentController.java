@@ -46,4 +46,15 @@ public class PaymentController {
         }
     }
 
+    /**
+     * ribbon负载均衡 rule
+     *
+     * @return
+     */
+    @GetMapping(value = "/payment/lb")
+    public String getPaymentLB() {
+        return serverPort;
+    }
+
+
 }
