@@ -1,5 +1,6 @@
 ### 尚硅谷 springCloud 学习
 
+ ![Alt text](image/cloud组件图.png)
 
 ### consul
 
@@ -36,4 +37,6 @@
   - AP -满足可用性,分区容忍性的系统，通常可能对一 致性要求低一 些。
  
     ![Alt text](image/CAP.png)
- 
+
+### OpenFeign    
+    Feign是一个声明式的web服务客户端，让编写web服务客户端变得非常容易，只需创建一个接口并在接口上添加注解即可
