@@ -20,3 +20,9 @@ ribbon:
   ReadTimeout: 5000
   #指的是连接建立后,从服务器获取到可用资源所用时间
   ConnectTimeout: 5000
+
+
+#feign 日志以什么级别监控那个接口
+logging:
+  level:
+    com.george.springcloud.service: debug
