@@ -61,26 +61,6 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
 </project>
