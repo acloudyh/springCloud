@@ -72,6 +72,9 @@
 
 #### 服务熔断
     服务的降级->进而熔断->恢复调用链路
+    
+   [https://martinfowler.com/bliki/CircuitBreaker.html](https://martinfowler.com/bliki/CircuitBreaker.html)
+   
    ![Alt text](image/CircuitBreaker.jpg)
     
 - 概念: 如果某个目标服务调用慢或者有大量超时，此时，熔断该服务的调用，对于后续调用请求，不在继续调用目标服务，直接返回，快速释放资源; 如果目标服务情况好转则恢复调用。(简单来说: 类比保险丝达到最大服务访问后，直接拒绝访问，拉闸限电，然后调用服务降级的方法并返回友好提示)
