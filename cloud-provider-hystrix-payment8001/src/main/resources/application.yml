@@ -1,0 +1,13 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-provider-hystrix-payment
+
+eureka:
+  client:
+    register-with-eureka: true   #是否将自己注册到注册中心,集群必须设置为true配合ribbon
+    fetch-registry: true    #是否从服务端抓取已有的注册信息
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
