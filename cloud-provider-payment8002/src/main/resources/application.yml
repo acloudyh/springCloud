@@ -24,9 +24,9 @@ eureka:
     #是否从EurekaServer抓取已有的注册信息,单机无所谓,集群必须设置为true配合ribbon使用负载均衡
     fetch-registry: true
     service-url:
-      #      defaultZone: http://localhost:7001/eureka  #单机版
+      defaultZone: http://localhost:7001/eureka  #单机版
       #集群版
-      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+  #      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
   instance:
     instance-id: payment8002
     prefer-ip-address: true  #访问路径可以显示IP地址
