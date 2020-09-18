@@ -1,5 +1,9 @@
 ## 尚硅谷 springCloud 学习 持续更新
 
+## 填坑之路
+[踩坑经历,记录博客](https://blog.csdn.net/yanghao937170)
+
+
 脑图链接:
 链接: https://pan.baidu.com/s/1NqN2yP0FfsrozJ6bIANTNQ 提取码: k7v9
 
@@ -171,3 +175,24 @@
    [b站视频P62](https://www.bilibili.com/video/BV18E411x7eT?p=62)
     
    ![Alt text](image/hystrix-command-flow-chart.png)
+   
+   
+   
+### SpringCloud Gateway
+#### SpringCloud Gateway 特性
+- 基于Spring Framework 5, Project Relactor和Spring Boot 2.0进行构建;
+- 动态路由:能够匹配任何请求属性;
+- 可以对路由指定Predicate (断言)和Filter (过滤器) ;
+- 集成Hystrix的断路器功能;
+- 集成Spring Cloud服务发现功能;
+- 易于编写的Predicate (断言)和Filter (过滤器) ;
+- 清求限流功能;
+- 支持路径重写。
+#### SpringCloud Gateway 和zuul区别
+
+在SpringCloud Finchley正式版之前，Spring Cloud推荐的网关是Netflix提供的Zuul:
+ 1. Zuul 1.x, 是-个基于阻塞I/ 0的API Gateway
+ 2. Zuul 1.x基于Servlet 2. 5使用阻塞架构它不支持任何长连接(如WebSocket) Zuul的设计模式和Nginx较像，每次|/ 0操作都是从工作线程中选择一个执行, 请求线程被阻塞到工作线程完成，但是差别是Nginx用C++实现，Zuul 用Java实现，而JVM本身会有第-次加载较慢的情况，使得Zuul的性能相对较差。
+ 3. Zuul 2.x理念更先进,想基于Netty非阻塞和支持长连接,但SpringCloud目前还没有整合。Zuul 2.x的性能较Zuul 1.x 有较大提升。在性能方面，根据官方提供的基准测试，Spring Cloud Gateway的RPS (每秒请求数)是Zuul 的1.6倍。
+ 4. Spring Cloud Gateway建立在Spring Framework 5、Project Reactor和Spring Boot2之上，使用非阻塞API。
+ 5. Spring Cloud Gateway还支持WebSocket,并且与Spring紧密集成拥有更好的开发体验
