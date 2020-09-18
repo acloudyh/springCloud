@@ -165,3 +165,9 @@
 - 概念: 限流模式主要是提前对各个类型的请求设置最高的QPS阈值，若高于设置的阈值则对该请求直接返回，不再调用后续资源(简单来说: 秒杀高并发等操作，严禁一窝蜂的过来拥挤，大家排队，一秒钟N个，有序进行)
 
 ***参考alibaba的Sentinel***
+
+#### Hystrix工作流程
+    
+   [b站视频P62](https://www.bilibili.com/video/BV18E411x7eT?p=62)
+    
+   ![Alt text](image/hystrix-command-flow-chart.png)
