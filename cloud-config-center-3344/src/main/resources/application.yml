@@ -1,0 +1,25 @@
+#####################
+# 需要修改host文件 增加127.0.0.1  config-3344.com
+#####################
+
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center #注册进Eureka服务器的微服务名
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/acloudyh/springCloud-config.git #github上仓库地址
+          search-paths:
+            # 搜索目录
+            - springcoud-config
+      #读取分支
+      label: master
+
+#服务注册到Eureka地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
