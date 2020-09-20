@@ -196,3 +196,50 @@
  3. Zuul 2.x理念更先进,想基于Netty非阻塞和支持长连接,但SpringCloud目前还没有整合。Zuul 2.x的性能较Zuul 1.x 有较大提升。在性能方面，根据官方提供的基准测试，Spring Cloud Gateway的RPS (每秒请求数)是Zuul 的1.6倍。
  4. Spring Cloud Gateway建立在Spring Framework 5、Project Reactor和Spring Boot2之上，使用非阻塞API。
  5. Spring Cloud Gateway还支持WebSocket,并且与Spring紧密集成拥有更好的开发体验
+ 
+### 消息总线
+
+#### Rabbit MQ
+
+1. 安装
+
+ [官网安装方式](https://www.rabbitmq.com/install-homebrew.html)
+ ```shell script
+ brew install rabbitmq
+ ```
+
+2. 修改配置
+
+ vim  ~/.zshrc 
+ ```shell script
+ # RabbitMQ Config
+ export PATH=$PATH:/usr/local/sbin
+ ```
+
+3. 启动
+```shell script
+➜  ~ rabbitmq-server
+Configuring logger redirection
+
+  ##  ##      RabbitMQ 3.8.8
+  ##  ##
+  ##########  Copyright (c) 2007-2020 VMware, Inc. or its affiliates.
+  ######  ##
+  ##########  Licensed under the MPL 2.0. Website: https://rabbitmq.com
+
+  Doc guides: https://rabbitmq.com/documentation.html
+  Support:    https://rabbitmq.com/contact.html
+  Tutorials:  https://rabbitmq.com/getstarted.html
+  Monitoring: https://rabbitmq.com/monitoring.html
+
+  Logs: /usr/local/var/log/rabbitmq/rabbit@localhost.log
+        /usr/local/var/log/rabbitmq/rabbit@localhost_upgrade.log
+
+  Config file(s): (none)
+
+  Starting broker... completed with 6 plugins.
+```
+
+4. 登录查看
+ http://localhost:15672
+ 账号密码:guest
