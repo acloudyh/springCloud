@@ -1,5 +1,5 @@
 server:
-  port: 3355
+  port: 3366
 
 spring:
   application:
@@ -19,15 +19,12 @@ spring:
     username: guest
     password: guest
 
+
 eureka:
   client:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka
 
-##########################
-# 需要手动刷新一下,才能不用重启访问3355才可以查看最新配置
-# curl -X POST "http://localhost:3355/actuator/refresh"
-##########################
 # 暴露监控端点
 management:
   endpoints:

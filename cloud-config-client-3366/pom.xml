@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>cloud-config-client-3355</artifactId>
+    <artifactId>cloud-config-client-3366</artifactId>
 
     <dependencies>
         <!--    3366需要,P81节课添加依赖,添加消息总线RabbitMQ支持    -->
@@ -39,4 +39,5 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
+
 </project>
