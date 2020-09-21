@@ -4,6 +4,13 @@ spring:
   application:
     name: cloud-order-service
 
+  #P94 需要的配置
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1  #采样率值介于0-1之间,1标识全部采集
+
 eureka:
   client:
     #是否将自己注册到注册中心, 默认true
