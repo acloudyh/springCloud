@@ -243,3 +243,30 @@ Configuring logger redirection
 4. 登录查看
  http://localhost:15672
  账号密码:guest
+ 
+## Spring Cloud Alibaba
+
+   [官网](https://spring.io/projects/spring-cloud-alibaba)
+   
+   [github中文文档](https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md)
+   
+   [github英文文档](https://spring-cloud-alibaba-group.github.io/github-pages/greenwich/spring-cloud-alibaba.html)
+   
+### Nacos
+
+1. 简介
+   - acos 相当于注册中心+配置中心的组合 ===> Nacos=Eureka+Config+Bus
+   - [官网](https://nacos.io/zh-cn/)
+
+2. 安装
+   [参考官网](https://nacos.io/zh-cn/docs/quick-start.html)
+
+
+   
+   
+   
+   
+   
+   
+   
+   
