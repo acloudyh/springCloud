@@ -277,6 +277,26 @@ Configuring logger redirection
   ```shell script
     curl -X PUT '$NACOS_SERVER:8848/nacos/v1/ns/operator/switches?entry=serverMode&value=CP'
 ``` 
+
+### Nacos集群和持久化配置
+1. 说明
+  - [官网链接](https://nacos.io/zh-cn/docs/cluster-mode-quick-start.html)
+  - 架构图等价于
+    ![Alt text](image/nacos集群.png)
+    
+2. derby切换mysql脚本
+   [nacos-mysql.sql脚本](nacos-mysql.sql)
+   
+3. 修改application.properties,并重启nacos
+
+```
+    spring.datasource.platform=mysql
+    
+    db.num=1
+    db.url.0=jdbc:mysql://11.162.196.16:3306/nacos_devtest?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true
+    db.user=nacos_devtest
+    db.password=youdontknow
+```
    
    
    
