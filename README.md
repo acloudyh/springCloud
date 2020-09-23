@@ -298,83 +298,71 @@ Configuring logger redirection
     db.password=youdontknow
 ```
 
-
-## 集群配置及Nginx反向代理
-**前提是需要一个虚拟机，本文基于CentOS 7 **
- 1. **下载Nacos**
- 
-	[官网下载 https://github.com/alibaba/nacos/releases/tag/1.3.2](https://github.com/alibaba/nacos/releases/tag/1.3.2)
-	
- 2. **配置Nacos**
-	-  创建mynacos文件夹将tar包解压到mynacos文件夹中
-	-  配置cluster.conf
-
-	```powershell
-	cp cluster.conf.example cluster.conf
-	vim cluster.conf
-	```
-	- 添加以下内容
-## Nacos集群
+## Nacos集群配置及Nginx反向代理
 ## 安装Nacos
 
 **前提是需要一个虚拟机，本文基于CentOS 7**
 
+[CSDN同步更新了](https://blog.csdn.net/yanghao937170/article/details/108750824)
 1. 下载Nacos
 
     [下载地址](https://github.com/alibaba/nacos/releases/tag/1.3.2)
 2. 配置Nacos
     - 创建mynacos文件夹；将tar包解压到mynacos文件夹中
-	-  配置cluster.conf
+	- 配置cluster.conf
 
-	   ```powershell
+	    ```powershell
 	   cp cluster.conf.example cluster.conf
 	   vim cluster.conf
-	```
-	
+	     ```
 	- 添加以下内容(根据自己的**主机ip**来填)
-	```powershell
-	   192.168.81.129:3333
-	   192.168.81.129:4444
-	   192.168.81.129:4444
-	```
-	- 修改数据库文件,**vim application.properties**
-	   ```powershell
-	   spring.datasource.platform=mysql
-	   db.num=1
-db.url.0=jdbc:mysql://127.0.0.1:3306/nacos_config?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true
-db.user=root
-db.password=6yhn^YHN
+ 
 	    ```
+	    192.168.81.129:3333
+	    192.168.81.129:4444
+	    192.168.81.129:4444
+	    ```
+ 
+	- 修改数据库文件,**vim application.properties**
+ 
+        ```
+       spring.datasource.platform=mysql
+       db.num=1
+       db.url.0=jdbc:mysql://127.0.0.1:3306/nacos_config?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true
+       db.user=root
+       db.password=6yhn^YHN
+        ```
+
 	- 关闭防火墙或者开放端口（为了省事，我关闭了和防火墙）
-	 ```powershell
-	   systemctl stop firewalld
-	```
+	    ```powershell
+	    systemctl stop firewalld
+	    ```
 	
 3. 启动Nacos
     **TIPS：因为是一台机器，所以以多个实例来设置集群，以端口区分，需要启动三个nacos；如果是多台机器那就正常一个机器起一个nacos即可**
     - 复制**startup.sh**
 
-	 ```powershell
-	   cp startup.sh.bak startup-3333.sh
-	   cp startup.sh.bak startup-4444.sh
-	   cp startup.sh.bak startup-5555.sh
-	```
+         ```powershell
+          cp startup.sh.bak startup-3333.sh
+          cp startup.sh.bak startup-4444.sh
+          cp startup.sh.bak startup-5555.sh
+         ```
     - 修改**vim startup-3333.sh**（一个示例，4444和5555 都按照此修改）,增加**-Dserver.port=3333**启动时指定端口号
     
-    	 ```powershell
-	   # start
-echo "$JAVA ${JAVA_OPT}" > ${BASE_DIR}/logs/start.out 2>&1 &
-nohup $JAVA -Dserver.port=3333 ${JAVA_OPT} nacos.nacos >> ${BASE_DIR}/logs/start.out 2>&1 &
-echo "nacos is starting，you can check the ${BASE_DIR}/logs/start.out"
-	```
+        ```powershell
+         # start
+         echo "$JAVA ${JAVA_OPT}" > ${BASE_DIR}/logs/start.out 2>&1 &
+         nohup $JAVA -Dserver.port=3333 ${JAVA_OPT} nacos.nacos >> ${BASE_DIR}/logs/start.out 2>&1 &
+         echo "nacos is starting，you can check the ${BASE_DIR}/logs/start.out"
+        ```
 	
 	- 启动nacos
 	
-	```powershell
-	   ./startup-3333.sh
-	   ./startup-4444.sh
-	   ./startup-5555.sh
-	```
+        ```powershell
+       ./startup-3333.sh
+       ./startup-4444.sh
+       ./startup-5555.sh
+        ```
 	 
 ## 安装Nginx
 
