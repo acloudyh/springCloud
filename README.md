@@ -278,7 +278,7 @@ Configuring logger redirection
     curl -X PUT '$NACOS_SERVER:8848/nacos/v1/ns/operator/switches?entry=serverMode&value=CP'
 ``` 
 
-### Nacos集群和持久化配置
+### Nacos持久化配置
 1. 说明
   - [官网链接](https://nacos.io/zh-cn/docs/cluster-mode-quick-start.html)
   - 架构图等价于
@@ -297,6 +297,123 @@ Configuring logger redirection
     db.user=nacos_devtest
     db.password=youdontknow
 ```
+
+
+## 集群配置及Nginx反向代理
+**前提是需要一个虚拟机，本文基于CentOS 7 **
+ 1. **下载Nacos**
+ 
+	[官网下载 https://github.com/alibaba/nacos/releases/tag/1.3.2](https://github.com/alibaba/nacos/releases/tag/1.3.2)
+	
+ 2. **配置Nacos**
+	-  创建mynacos文件夹将tar包解压到mynacos文件夹中
+	-  配置cluster.conf
+
+	```powershell
+	cp cluster.conf.example cluster.conf
+	vim cluster.conf
+	```
+	- 添加以下内容
+## Nacos集群
+## 安装Nacos
+
+**前提是需要一个虚拟机，本文基于CentOS 7**
+
+1. 下载Nacos
+
+    [下载地址](https://github.com/alibaba/nacos/releases/tag/1.3.2)
+2. 配置Nacos
+    - 创建mynacos文件夹；将tar包解压到mynacos文件夹中
+	-  配置cluster.conf
+
+	   ```powershell
+	   cp cluster.conf.example cluster.conf
+	   vim cluster.conf
+	```
+	
+	- 添加以下内容(根据自己的**主机ip**来填)
+	```powershell
+	   192.168.81.129:3333
+	   192.168.81.129:4444
+	   192.168.81.129:4444
+	```
+	- 修改数据库文件,**vim application.properties**
+	   ```powershell
+	   spring.datasource.platform=mysql
+	   db.num=1
+db.url.0=jdbc:mysql://127.0.0.1:3306/nacos_config?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true
+db.user=root
+db.password=6yhn^YHN
+	    ```
+	- 关闭防火墙或者开放端口（为了省事，我关闭了和防火墙）
+	 ```powershell
+	   systemctl stop firewalld
+	```
+	
+3. 启动Nacos
+    **TIPS：因为是一台机器，所以以多个实例来设置集群，以端口区分，需要启动三个nacos；如果是多台机器那就正常一个机器起一个nacos即可**
+    - 复制**startup.sh**
+
+	 ```powershell
+	   cp startup.sh.bak startup-3333.sh
+	   cp startup.sh.bak startup-4444.sh
+	   cp startup.sh.bak startup-5555.sh
+	```
+    - 修改**vim startup-3333.sh**（一个示例，4444和5555 都按照此修改）,增加**-Dserver.port=3333**启动时指定端口号
+    
+    	 ```powershell
+	   # start
+echo "$JAVA ${JAVA_OPT}" > ${BASE_DIR}/logs/start.out 2>&1 &
+nohup $JAVA -Dserver.port=3333 ${JAVA_OPT} nacos.nacos >> ${BASE_DIR}/logs/start.out 2>&1 &
+echo "nacos is starting，you can check the ${BASE_DIR}/logs/start.out"
+	```
+	
+	- 启动nacos
+	
+	```powershell
+	   ./startup-3333.sh
+	   ./startup-4444.sh
+	   ./startup-5555.sh
+	```
+	 
+## 安装Nginx
+
+贴个安装nginx教程，并且配置stream负载均衡 [转向网址](http://xiaohost.com/2754.html)
+
+1. 配置Nginx
+    由于我是yum安装的Nginx 配置文件 **vim /etc/nginx/nginx.confg**
+    - 设置upstream cluster
+    - 设置location根路径。**proxy_pass http://cluster;**
+    
+    ``` 
+    #gzip  on;
+    upstream cluster{
+        server 192.168.81.129:3333;
+        server 192.168.81.129:4444;
+        server 192.168.81.129:5555;
+    }
+    server {
+        listen       1111;
+        server_name  localhost;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+            root   html;
+            index  index.html index.htm;
+            proxy_pass http://cluster;
+        }
+    ```
+    
+1. 启动Nginx
+    
+    ```
+    systemctl start nginx.service
+    ```
+2. 登录查看[http://192.168.81.129:1111/nacos/#/login](http://192.168.81.129:1111/nacos/#/login)
+
    
    
    
