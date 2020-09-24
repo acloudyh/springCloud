@@ -23,7 +23,9 @@ public class CircleBreakerController {
     private RestTemplate restTemplate;
 
     @RequestMapping("/consumer/fallback/{id}")
-    @SentinelResource(value = "fallback") //没有配置
+//    @SentinelResource(value = "fallback") //没有配置
+    @SentinelResource(value = "fallback", fallback = "handlerFallback") //fallback 只负责业务异常
+
     public CommonResult<Payment> fallback(@PathVariable("id") Long id) {
 
         CommonResult<Payment> result = restTemplate.getForObject(SERVICE_URL + "/paymentSQL/" + id, CommonResult.class, id);
@@ -36,4 +38,15 @@ public class CircleBreakerController {
         return result;
     }
 
+    /**
+     * 本例子是 fallback handlerFallback
+     *
+     * @param id
+     * @param e
+     * @return
+     */
+    public CommonResult handlerFallback(@PathVariable("id") Long id, Throwable e) {
+        Payment payment = new Payment(id, "null");
+        return new CommonResult(444, "兜底异常handlerFallback，exception内容" + e.getMessage(), payment);
+    }
 }
