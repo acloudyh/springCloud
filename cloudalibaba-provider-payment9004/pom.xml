@@ -8,36 +8,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>cloudalibaba-provider-payment9004</artifactId>
 
     <dependencies>
-        <!--   nacos config     -->
-        <!--        <dependency>-->
-        <!--            <groupId>com.alibaba.cloud</groupId>-->
-        <!--            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>-->
-        <!--        </dependency>-->
         <!--  SpringCloud alibaba nacos    -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-        <!--        &lt;!&ndash;    后续做持久化用到    &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.alibaba.csp</groupId>-->
-        <!--            <artifactId>sentinel-datasource-nacos</artifactId>-->
-        <!--        </dependency>-->
-        <!--        &lt;!&ndash;   sentinel     &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.alibaba.cloud</groupId>-->
-        <!--            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>-->
-        <!--        </dependency>-->
-        <!--        &lt;!&ndash;   openfeign     &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.cloud</groupId>-->
-        <!--            <artifactId>spring-cloud-starter-openfeign</artifactId>-->
-        <!--        </dependency>-->
-
         <!--  web组件      -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
