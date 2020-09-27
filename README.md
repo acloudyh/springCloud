@@ -405,11 +405,7 @@ Configuring logger redirection
 
 ## Seta
 
-1. 所需的建表语句以及项目中的sql
-   
-   
-   
-   
+1. 所需的建表语句以及项目中的[初始化脚本sql](seta-project-undo_log.sql)
    
    
    
