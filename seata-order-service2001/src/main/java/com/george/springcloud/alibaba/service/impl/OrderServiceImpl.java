@@ -40,7 +40,7 @@ public class OrderServiceImpl implements OrderService {
         storageService.decrease(order.getProductId(), order.getCount());
         log.info("------------->订单微服务开始调用库存,做扣减end");
 
-        log.info("------------->订单微服务开始调用账户,做扣减 账户钱");
+        log.info("------------->订单微服务开始调用账户,做扣减 账户余额");
         accountService.decrease(order.getUserId(), order.getMoney());
         log.info("------------->订单微服务开始调用账户,做扣减end");
 

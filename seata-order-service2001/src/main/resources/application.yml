@@ -20,7 +20,7 @@ spring:
 #    type: com.alibaba.druid.pool.DruidDataSource
 feign:
   hystrix:
-    enabled: true
+    enabled: false
 
 logging:
   level:

@@ -2,6 +2,7 @@ package com.george.springcloud.alibaba.dao;
 
 import com.george.springcloud.alibaba.domain.Order;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author Yang Hao
@@ -23,6 +24,6 @@ public interface OrderDao {
      * @param userId
      * @param status
      */
-    void update(Long userId, Integer status);
+    void update(@Param("userId") Long userId,@Param("status") Integer status);
 }
 

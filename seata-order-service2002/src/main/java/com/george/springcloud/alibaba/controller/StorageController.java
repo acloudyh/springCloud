@@ -3,10 +3,7 @@ package com.george.springcloud.alibaba.controller;
 import com.george.springcloud.alibaba.domain.CommonResult;
 import com.george.springcloud.alibaba.service.StorageService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -17,7 +14,7 @@ public class StorageController {
     @Resource
     private StorageService storageService;
 
-    @PostMapping(value = "/storage/decrease")
+    @RequestMapping(value = "/storage/decrease")
     public CommonResult decrease(@RequestParam("productId") Long productId,
                                  @RequestParam("count") Integer count) {
         storageService.decrease(productId,count);

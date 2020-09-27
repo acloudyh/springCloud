@@ -3,9 +3,7 @@ package com.george.springcloud.alibaba.controller;
 import com.george.springcloud.alibaba.domain.CommonResult;
 import com.george.springcloud.alibaba.service.AccountService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
@@ -21,7 +19,7 @@ public class AccountController {
     @Resource
     private AccountService accountService;
 
-    @PostMapping("/account/decrease")
+    @RequestMapping("/account/decrease")
     public CommonResult decrease(@RequestParam("userId") Long userId,
                                  @RequestParam("money") BigDecimal money) {
         accountService.decrease(userId, money);
