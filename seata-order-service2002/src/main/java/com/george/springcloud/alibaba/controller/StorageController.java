@@ -17,7 +17,7 @@ public class StorageController {
     @Resource
     private StorageService storageService;
 
-    @PostMapping(value = "storage/decrease")
+    @PostMapping(value = "/storage/decrease")
     public CommonResult decrease(@RequestParam("productId") Long productId,
                                  @RequestParam("count") Integer count) {
         storageService.decrease(productId,count);
