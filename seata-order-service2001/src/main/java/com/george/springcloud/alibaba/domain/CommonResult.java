@@ -1,4 +1,4 @@
-package com.george.springcloud.domain;
+package com.george.springcloud.alibaba.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
