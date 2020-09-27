@@ -403,11 +403,11 @@ Configuring logger redirection
 2. 登录查看[http://192.168.81.129:1111/nacos/#/login](http://192.168.81.129:1111/nacos/#/login)
 
 
-## Seta
+## Seata
 
-1. 所需的建表语句以及项目中的[初始化脚本sql](seta-project-undo_log.sql)
-   
-   
+1. 所需的建表语句以及项目中的[初始化脚本sql](seata-project-undo_log.sql)
+2. 实现示例
+    ![Alt text](image/seata实现过程.png)
    
    
    

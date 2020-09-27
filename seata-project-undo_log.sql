@@ -1,13 +1,13 @@
 
 /*
     该sql包含以下
-    1. seta建库建表语句
+    1. seata建库建表语句
     2. 项目中需要的建表语句
     3. undo_log建表语句
 */
 
 -- ----------------------------
--- seta 建库建表语句
+-- seata 建库建表语句
 -- ----------------------------
 Drop Database if exists seata;
 create database seata;
