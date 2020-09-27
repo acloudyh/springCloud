@@ -402,7 +402,10 @@ Configuring logger redirection
     ```
 2. 登录查看[http://192.168.81.129:1111/nacos/#/login](http://192.168.81.129:1111/nacos/#/login)
 
-   
+
+## Seta
+
+1. 所需的建表语句以及项目中的sql
    
    
    
