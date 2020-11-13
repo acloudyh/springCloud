@@ -29,4 +29,5 @@ eureka:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
   instance:
     instance-id: payment8002
-    prefer-ip-address: true  #访问路径可以显示IP地址
+    #访问路径可以显示IP地址
+    prefer-ip-address: true
