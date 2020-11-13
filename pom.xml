@@ -7,6 +7,7 @@
     <groupId>com.george.springcloud</groupId>
     <artifactId>springCloud</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <modules>
         <module>cloud-provider-payment8001</module>
         <module>cloud-consumer-order80</module>
@@ -41,8 +42,6 @@
         <module>seata-order-service2002</module>
         <module>seata-order-service2003</module>
     </modules>
-    <packaging>pom</packaging>
-
 
     <!-- 统一管理jar包版本 -->
     <properties>

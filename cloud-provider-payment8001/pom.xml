@@ -23,7 +23,10 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!--    引入自定义的api通用包，可以使用Payment支付Entity    -->
+        <!--
+            引入自定义的api通用包，可以使用Payment支付Entity
+            一些的通用依赖可以点进去查看
+        -->
         <dependency>
             <groupId>com.george.springcloud</groupId>
             <artifactId>cloud-api-commons</artifactId>
