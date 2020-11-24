@@ -22,7 +22,7 @@ public class PaymentService {
      * @return
      */
     public String paymentInfo_OK(Integer id) {
-        return "线程池： " + Thread.currentThread().getName() + " PaymenyInfo_OK,id: " + id + "\t" + "O(∩_∩)O哈哈~";
+        return "线程池： " + Thread.currentThread().getName() + " PaymenyInfo_OK,id: " + id + "\t " + "O(∩_∩)O哈哈~";
     }
 
     /**
@@ -47,7 +47,7 @@ public class PaymentService {
     }
 
     public String paymentInfo_TimeOutHandler(Integer id) {
-        return "线程池： " + Thread.currentThread().getName() + " 8001系统繁忙系统报错,请稍后再试id: " + id + "\t" + "o(╥﹏╥)o";
+        return "线程池： " + Thread.currentThread().getName() + " 8001系统繁忙系统报错paymentInfo_TimeOutHandler ,请稍后再试id: " + id + "\t " + "o(╥﹏╥)o";
 
     }
 
