@@ -1,7 +1,9 @@
 ## 尚硅谷 springCloud 学习 持续更新
 
 ## 填坑之路
-[踩坑经历,记录博客](https://blog.csdn.net/yanghao937170)
+[踩坑记录](https://acloudyh.github.io/categories/)
+
+[踩坑记录CSDN](https://blog.csdn.net/yanghao937170)
 
 
 脑图链接:
