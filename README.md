@@ -279,7 +279,7 @@ Configuring logger redirection
 ### Nacos
 
 1. 简介
-   - acos 相当于注册中心+配置中心的组合 ===> Nacos=Eureka+Config+Bus
+   - Nacos 相当于注册中心+配置中心的组合 ===> Nacos=Eureka+Config+Bus
    - [官网](https://nacos.io/zh-cn/)
 
 2. 安装
