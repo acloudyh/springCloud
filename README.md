@@ -1,5 +1,7 @@
 ## 尚硅谷 springCloud 学习 持续更新
 
+ [springCloud-config配置中心](https://github.com/acloudyh/springCloud-config)
+
 ## 填坑之路
 [踩坑记录](https://acloudyh.github.io/categories/)
 
