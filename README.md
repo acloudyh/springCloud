@@ -1,11 +1,11 @@
-## 尚硅谷 springCloud 学习 持续更新
+## springCloud 学习
 
  [springCloud-config配置中心](https://github.com/acloudyh/springCloud-config)
 
 ## 填坑之路
-[踩坑记录](https://acloudyh.github.io/categories/)
+[个人主页](https://acloudyh.github.io/categories/)
 
-[踩坑记录CSDN](https://blog.csdn.net/yanghao937170)
+[CSDN](https://blog.csdn.net/yanghao937170)
 
 
 脑图链接:
@@ -327,9 +327,9 @@ Configuring logger redirection
 ## Nacos集群配置及Nginx反向代理
 ## 安装Nacos
 
-**前提是需要一个虚拟机，本文基于CentOS 7**
+**本文基于CentOS 7**
 
-[CSDN同步更新了](https://blog.csdn.net/yanghao937170/article/details/108750824)
+[CSDN同步更新](https://blog.csdn.net/yanghao937170/article/details/108750824)
 1. 下载Nacos
 
     [下载地址](https://github.com/alibaba/nacos/releases/tag/1.3.2)
