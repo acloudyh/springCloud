@@ -286,6 +286,25 @@ Configuring logger redirection
 
 2. 安装
    [参考官网](https://nacos.io/zh-cn/docs/quick-start.html)
+   
+   - 遇见报错
+    ```
+   Caused by: org.apache.derby.iapi.error.StandardException: Failed to start database '/Users/neo/code/nacos/data/derby-data' with class loader org.springframework.boot.loader.LaunchedURLClassLoader@7daf6ecc, see the next exception for details.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 15 common frames omitted
+    Caused by: org.apache.derby.iapi.error.StandardException: Another instance of Derby may have already booted the database /Users/neo/code/nacos/data/derby-data.
+    at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+    at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+    at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.privGetJBMSLockOnDB(Unknown Source)
+    at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.run(Unknown Source)
+    at java.security.AccessController.doPrivileged(Native Method)
+    at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.getJBMSLockOnDB(Unknown Source)
+    at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.boot(Unknown Source)
+    at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+    ```
+   - 删除derby-data文件夹重新启动
+    ```/Users/neo/code/nacos/data/derby-data```
 
 3. nacos与其它注册中心特新对比
 
