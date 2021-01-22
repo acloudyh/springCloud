@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RefreshScope
 public class ConfigClientController {
-//    @Value("${server.port}")
-    private String serverPort="999";
+    //    @Value("${server.port}")
+    private String serverPort = "999";
 
     @Value("${config.info}")
     private String configInfo;

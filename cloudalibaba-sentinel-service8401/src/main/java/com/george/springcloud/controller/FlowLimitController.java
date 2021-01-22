@@ -56,14 +56,14 @@ public class FlowLimitController {
     }
 
     @GetMapping("/testHotKey")
-    @SentinelResource(value = "testHotKey",blockHandler = "deal_testHotKey")
-    public String testHotKey(@RequestParam(value = "p1",required = false) String p1,
+    @SentinelResource(value = "testHotKey", blockHandler = "deal_testHotKey")
+    public String testHotKey(@RequestParam(value = "p1", required = false) String p1,
                              @RequestParam(value = "p2", required = false) String p2) {
         return "-------testHotKey";
     }
 
     public String deal_testHotKey(String p1, String p2,
-                                  BlockException exception){
+                                  BlockException exception) {
         return "----deal_testHotKey,o(╥﹏╥)o";
 
     }

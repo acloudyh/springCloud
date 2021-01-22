@@ -24,6 +24,6 @@ public interface OrderDao {
      * @param userId
      * @param status
      */
-    void update(@Param("userId") Long userId,@Param("status") Integer status);
+    void update(@Param("userId") Long userId, @Param("status") Integer status);
 }
 

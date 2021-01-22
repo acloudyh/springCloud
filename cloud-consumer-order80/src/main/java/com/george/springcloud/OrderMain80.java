@@ -1,10 +1,8 @@
 package com.george.springcloud;
 
-import com.george.myrule.MyselfRule;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
 
 /**
  * @author Yang Hao

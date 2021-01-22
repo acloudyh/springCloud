@@ -24,6 +24,8 @@ public class CircleBreakerController {
 
     @Resource
     private RestTemplate restTemplate;
+    @Resource
+    private PaymentService paymentService;
 
     @RequestMapping("/consumer/fallback/{id}")
 //    @SentinelResource(value = "fallback") //没有配置
@@ -59,6 +61,8 @@ public class CircleBreakerController {
         return new CommonResult(444, "兜底异常handlerFallback，exception内容" + e.getMessage(), payment);
     }
 
+//--------------------------------- OpenFeign ---------------------------------
+
     /**
      * 本例子是 blockHandler
      *
@@ -70,11 +74,6 @@ public class CircleBreakerController {
         Payment payment = new Payment(id, "null");
         return new CommonResult(445, "blockHandler-sentinel限流，无此流水：blockException" + blockException.getClass().getCanonicalName(), payment);
     }
-
-//--------------------------------- OpenFeign ---------------------------------
-
-    @Resource
-    private PaymentService paymentService;
 
     @GetMapping(value = "/consumer/paymentSQL/{id}")
     public CommonResult<Payment> paymentSQL(@PathVariable("id") Long id) {
