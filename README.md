@@ -287,6 +287,12 @@ Configuring logger redirection
 2. 安装
    [参考官网](https://nacos.io/zh-cn/docs/quick-start.html)
    
+   - 单机启动
+    
+    ```shell
+    sh startup.sh -m standalone
+    ```
+   
    - 遇见报错
     ```
    Caused by: org.apache.derby.iapi.error.StandardException: Failed to start database '/Users/neo/code/nacos/data/derby-data' with class loader org.springframework.boot.loader.LaunchedURLClassLoader@7daf6ecc, see the next exception for details.
@@ -365,7 +371,7 @@ Configuring logger redirection
 	    ```
 	    192.168.81.129:3333
 	    192.168.81.129:4444
-	    192.168.81.129:4444
+	    192.168.81.129:5555
 	    ```
  
 	- 修改数据库文件,**vim application.properties**
