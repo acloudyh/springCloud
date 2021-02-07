@@ -2,7 +2,7 @@
 
  [springCloud-config配置中心](https://github.com/acloudyh/springCloud-config)
 
-## 填坑之路
+## 博客
 [个人主页](https://acloudyh.github.io/categories/)
 
 [CSDN](https://blog.csdn.net/yanghao937170)
