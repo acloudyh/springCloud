@@ -1,6 +1,6 @@
 ## springCloud 学习
 
- [springCloud-config配置中心](https://github.com/acloudyh/springCloud-config)
+ [springCloud-config配置中心源码](https://github.com/acloudyh/springCloud-config)
 
 ## 博客
 [个人主页](https://acloudyh.github.io/categories/)
