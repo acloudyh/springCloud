@@ -20,7 +20,7 @@
         <dependency>
             <groupId>com.george.springcloud</groupId>
             <artifactId>cloud-api-commons</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
         <!-- boot web actuator -->
         <dependency>
