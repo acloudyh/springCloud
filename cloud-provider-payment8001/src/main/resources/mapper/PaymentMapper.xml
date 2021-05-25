@@ -10,8 +10,8 @@
     </insert>
 
     <resultMap id="BaseResultMap" type="com.george.springcloud.entities.Payment">
-        <id column="id" property="id" jdbcType="BIGINT"></id>
-        <id column="serial" property="serial" jdbcType="VARCHAR"></id>
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <id column="serial" property="serial" jdbcType="VARCHAR"/>
     </resultMap>
 
     <select id="getPaymentById" parameterType="Long" resultMap="BaseResultMap">
