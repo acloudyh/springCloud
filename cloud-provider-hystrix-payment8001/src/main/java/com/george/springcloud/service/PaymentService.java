@@ -22,7 +22,7 @@ public class PaymentService {
      * @return
      */
     public String paymentInfo_OK(Integer id) {
-        return "线程池： " + Thread.currentThread().getName() + " PaymenyInfo_OK,id: " + id + "\t " + "O(∩_∩)O哈哈~";
+        return "线程池： " + Thread.currentThread().getName() + " PaymentInfo_OK,id: " + id + "\t " + "O(∩_∩)O哈哈~";
     }
 
     /**
@@ -36,10 +36,10 @@ public class PaymentService {
     })
     public String paymentInfo_TimeOut(Integer id) {
 
-        int timeNumber = 5000;
+        int timeNumber = 3;
 //         int timeNumber = 10/0;
         try {
-            TimeUnit.MILLISECONDS.sleep(timeNumber);
+            TimeUnit.SECONDS.sleep(timeNumber);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

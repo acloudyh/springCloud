@@ -29,7 +29,7 @@ public class OrderFeignController {
 
     /**
      * openfeign-ribbon 客户端一般默认等待1秒钟
-     * 在支付服务侧,模拟暂停三秒
+     * 在服务提供方, 模拟暂停三秒
      *
      * @return
      */
