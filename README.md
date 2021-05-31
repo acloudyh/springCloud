@@ -346,7 +346,7 @@ Configuring logger redirection
 
   ```shell script
     curl -X PUT '$NACOS_SERVER:8848/nacos/v1/ns/operator/switches?entry=serverMode&value=CP'
-``` 
+	``` 
 
 ### Nacos持久化配置
 
