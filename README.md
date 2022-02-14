@@ -313,7 +313,7 @@ Configuring logger redirection
 
     - 遇见报错
     ```
-   Caused by: org.apache.derby.iapi.error.StandardException: Failed to start database '/Users/neo/code/nacos/data/derby-data' with class loader org.springframework.boot.loader.LaunchedURLClassLoader@7daf6ecc, see the next exception for details.
+   Caused by: org.apache.derby.iapi.error.StandardException: Failed to start database '/Users/neo/code/nacos/data/derby-data' with class loader   org.springframework.boot.loader.LaunchedURLClassLoader@7daf6ecc, see the next exception for details.
 	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
 	... 15 common frames omitted
@@ -458,6 +458,7 @@ Configuring logger redirection
         server_name  localhost;
 
         #charset koi8-r;
+
 
         #access_log  logs/host.access.log  main;
 
